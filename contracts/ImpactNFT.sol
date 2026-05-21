@@ -1,11 +1,11 @@
 // SPDX-License-Identifier: MIT
-pragma solidity ^0.8.20;
+pragma solidity ^0.8.24; // Atualizado para casar com a versão principal do seu projeto
 
 import "@openzeppelin/contracts/token/ERC721/ERC721.sol";
 import "@openzeppelin/contracts/access/Ownable.sol";
 
 /**
- * title ImpactNFT
+ * @title ImpactNFT
  * Contrato único para o TerraVerificada.
  * Gerencia registros de conflitos fundiários com validação por consenso comunitário (3 validadores).
  */
@@ -38,9 +38,7 @@ contract ImpactNFT is ERC721, Ownable {
 
     constructor() ERC721("TerraVerificada Certificate", "TVC") Ownable(msg.sender) {}
 
-    /**
-     * Adiciona um validador comunitário (só o dono pode fazer)
-     */
+    // Adiciona um validador comunitário (só o dono pode fazer)
     function addValidator(address _validator) external onlyOwner {
         require(_validator != address(0), "Invalid address");
         require(!isValidator(_validator), "Already a validator");
@@ -49,9 +47,7 @@ contract ImpactNFT is ERC721, Ownable {
         emit ValidatorAdded(_validator);
     }
 
-    /**
-     * Remove um validador
-     */
+    // Remove um validador
     function removeValidator(address _validator) external onlyOwner {
         require(isValidator(_validator), "Not a validator");
         
@@ -65,9 +61,7 @@ contract ImpactNFT is ERC721, Ownable {
         emit ValidatorRemoved(_validator);
     }
 
-    /**
-     * Verifica se um endereço é validador
-     */
+    // Verifica se um endereço é validador
     function isValidator(address _addr) public view returns (bool) {
         for (uint256 i = 0; i < validators.length; i++) {
             if (validators[i] == _addr) return true;
@@ -75,31 +69,28 @@ contract ImpactNFT is ERC721, Ownable {
         return false;
     }
 
-    /**
-     * Registra um novo incidente de conflito fundiário
-     * @param _ipfsHash O hash do IPFS contendo as evidências (foto, audio, coords)
-     */
+    // Registra um novo incidente de conflito fundiário
+    // param _ipfsHash O hash do IPFS contendo as evidências (foto, audio, coords)
     function registerIncident(string memory _ipfsHash) external returns (uint256) {
         incidentCounter++;
         uint256 newId = incidentCounter;
 
-        incidents[newId] = Incident({
-            id: newId,
-            ipfsHash: _ipfsHash,
-            reporter: msg.sender,
-            timestamp: block.timestamp,
-            status: Status.PENDING,
-            validationCount: 0
-        });
+        // CORREÇÃO: Criamos a referência direto no storage para ignorar a instanciação do mapping interno
+        Incident storage newIncident = incidents[newId];
+        newIncident.id = newId;
+        newIncident.ipfsHash = _ipfsHash;
+        newIncident.reporter = msg.sender;
+        newIncident.timestamp = block.timestamp;
+        newIncident.status = Status.PENDING;
+        newIncident.validationCount = 0;
+        // O mapping 'hasValidated' inicia automaticamente com valores falsos de forma nativa
 
         emit IncidentRegistered(newId, msg.sender, _ipfsHash);
         return newId;
     }
 
-    /**
-     * Valida um incidente. Requer que o chamador seja um validador.
-     * Se atingir 3 validações, emite o NFT automaticamente.
-     */
+    // Valida um incidente. Requer que o chamador seja um validador.
+    // Se atingir 3 validações, emite o NFT automaticamente.
     function validateIncident(uint256 _id) external {
         require(isValidator(msg.sender), "Caller is not a community validator");
         require(incidents[_id].status == Status.PENDING, "Incident not pending");
@@ -119,18 +110,14 @@ contract ImpactNFT is ERC721, Ownable {
         }
     }
 
-    /**
-     * Rejeita um incidente (apenas dono ou validadores podem rejeitar se houver consenso de rejeição)
-     * Simplificado para demo: Só o dono pode rejeitar manualmente se necessário
-     */
+    // Rejeita um incidente (apenas dono ou validadores podem rejeitar se houver consenso de rejeição)
+    // Simplificado para demo: Só o dono pode rejeitar manualmente se necessário
     function rejectIncident(uint256 _id) external onlyOwner {
         require(incidents[_id].status == Status.PENDING, "Cannot reject non-pending");
         incidents[_id].status = Status.REJECTED;
     }
 
-    /**
-     * Retorna os detalhes completos de um incidente
-     */
+    // Retorna os detalhes completos de um incidente
     function getIncident(uint256 _id) external view returns (
         uint256 id,
         string memory ipfsHash,
@@ -139,13 +126,12 @@ contract ImpactNFT is ERC721, Ownable {
         Status status,
         uint256 validationCount
     ) {
-        Incident memory inc = incidents[_id];
+        // CORREÇÃO: Mudado para 'storage' para conseguir ler do mapeamento de forma eficiente
+        Incident storage inc = incidents[_id];
         return (inc.id, inc.ipfsHash, inc.reporter, inc.timestamp, inc.status, inc.validationCount);
     }
     
-    /**
-     * Retorna a lista de validadores (útil para debug/frontend)
-     */
+    // Retorna a lista de validadores (útil para debug/frontend)
     function getValidators() external view returns (address[] memory) {
         return validators;
     }
