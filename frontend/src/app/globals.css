@@ -1,26 +1,18 @@
-@import "tailwindcss";
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@import "leaflet/dist/leaflet.css";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+  --background: #FDFBF7; /* Fundo off-white/argila clara, descansável e limpo */
+  --foreground: #1E1E1E; /* Texto quase preto para alto contraste */
+  --primary-terra: #A34828; /* Tom terracota / urucum para botões e destaques */
+  --primary-forest: #1C3D27; /* Verde floresta fechado para cabeçalhos e seções */
+  --accent-ochre: #D49B35; /* Amarelo ocre / palha para detalhes e alertas */
 }
 
 body {
-  background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background: var(--background);
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
 }

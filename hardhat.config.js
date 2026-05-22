@@ -9,20 +9,14 @@ module.exports = {
         version: "0.8.24",
         settings: {
           evmVersion: "cancun",
-          optimizer: {
-            enabled: true,
-            runs: 200
-          }
+          optimizer: { enabled: true, runs: 200 }
         }
       },
       {
         version: "0.8.28",
         settings: {
           evmVersion: "cancun",
-          optimizer: {
-            enabled: true,
-            runs: 200
-          }
+          optimizer: { enabled: true, runs: 200 }
         }
       }
     ]
@@ -32,5 +26,9 @@ module.exports = {
       url: process.env.SEPOLIA_RPC_URL,
       accounts: process.env.PRIVATE_KEY ? [process.env.PRIVATE_KEY] : [],
     },
+  },
+  etherscan: {
+    // <<< ADICIONE ESTE BLOCO AQUI EMBAIXO
+    apiKey: process.env.ETHERSCAN_API_KEY,
   },
 };

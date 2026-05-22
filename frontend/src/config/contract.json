@@ -1,0 +1,26 @@
+{
+  "address": "0xA821477f669D74093Fc47eCd3095b9120Bc30a7f",
+  "chainId": 11155111,
+  "abi": [
+    {"inputs":[],"stateMutability":"nonpayable","type":"constructor"},
+    {"anonymous":false,"inputs":[{"indexed":true,"internalType":"address","name":"owner","type":"address"},{"indexed":true,"internalType":"address","name":"approved","type":"address"},{"indexed":true,"internalType":"uint256","name":"tokenId","type":"uint256"}],"name":"Approval","type":"event"},
+    {"anonymous":false,"inputs":[{"indexed":true,"internalType":"address","name":"owner","type":"address"},{"indexed":true,"internalType":"address","name":"operator","type":"address"},{"indexed":false,"internalType":"bool","name":"approved","type":"bool"}],"name":"ApprovalForAll","type":"event"},
+    {"anonymous":false,"inputs":[{"indexed":true,"internalType":"address","name":"validator","type":"address"}],"name":"ValidatorAdded","type":"event"},
+    {"anonymous":false,"inputs":[{"indexed":true,"internalType":"uint256","name":"id","type":"uint256"},{"indexed":true,"internalType":"address","name":"reporter","type":"address"},{"indexed":false,"internalType":"string","name":"ipfsHash","type":"string"}],"name":"IncidentRegistered","type":"event"},
+    {"anonymous":false,"inputs":[{"indexed":true,"internalType":"uint256","name":"id","type":"uint256"},{"indexed":true,"internalType":"address","name":"validator","type":"address"}],"name":"IncidentValidated","type":"event"},
+    {"anonymous":false,"inputs":[{"indexed":true,"internalType":"uint256","name":"id","type":"uint256"},{"indexed":true,"internalType":"address","name":"recipient","type":"address"}],"name":"CertificateIssued","type":"event"},
+    {"inputs":[{"internalType":"address","name":"_validator","type":"address"}],"name":"addValidator","outputs":[],"stateMutability":"nonpayable","type":"function"},
+    {"inputs":[{"internalType":"uint256","name":"_id","type":"uint256"}],"name":"getIncident","outputs":[{"internalType":"uint256","name":"id","type":"uint256"},{"internalType":"string","name":"ipfsHash","type":"string"},{"internalType":"address","name":"reporter","type":"address"},{"internalType":"uint256","name":"timestamp","type":"uint256"},{"internalType":"uint8","name":"status","type":"uint8"},{"internalType":"uint256","name":"validationCount","type":"uint256"}],"stateMutability":"view","type":"function"},
+    {"inputs":[{"internalType":"address","name":"_addr","type":"address"}],"name":"isValidator","outputs":[{"internalType":"bool","name":"","type":"bool"}],"stateMutability":"view","type":"function"},
+    {"inputs":[{"internalType":"string","name":"_ipfsHash","type":"string"}],"name":"registerIncident","outputs":[{"internalType":"uint256","name":"","type":"uint256"}],"stateMutability":"nonpayable","type":"function"},
+    {"inputs":[{"internalType":"uint256","name":"_id","type":"uint256"}],"name":"validateIncident","outputs":[],"stateMutability":"nonpayable","type":"function"},
+    {"inputs":[{"internalType":"address","name":"_validator","type":"address"}],"name":"removeValidator","outputs":[],"stateMutability":"nonpayable","type":"function"},
+    {"inputs":[],"name":"getValidators","outputs":[{"internalType":"address[]","name":"","type":"address[]"}],"stateMutability":"view","type":"function"},
+    {"inputs":[{"internalType":"uint256","name":"_id","type":"uint256"}],"name":"rejectIncident","outputs":[],"stateMutability":"nonpayable","type":"function"},
+    {"inputs":[],"name":"incidentCounter","outputs":[{"internalType":"uint256","name":"","type":"uint256"}],"stateMutability":"view","type":"function"},
+    {"inputs":[{"internalType":"uint256","name":"","type":"uint256"}],"name":"incidents","outputs":[{"internalType":"uint256","name":"id","type":"uint256"},{"internalType":"string","name":"ipfsHash","type":"string"},{"internalType":"address","name":"reporter","type":"address"},{"internalType":"uint256","name":"timestamp","type":"uint256"},{"internalType":"uint8","name":"status","type":"uint8"},{"internalType":"uint256","name":"validationCount","type":"uint256"}],"stateMutability":"view","type":"function"},
+    {"inputs":[{"internalType":"uint256","name":"","type":"uint256"}],"name":"validators","outputs":[{"internalType":"address","name":"","type":"address"}],"stateMutability":"view","type":"function"},
+    {"inputs":[],"name":"owner","outputs":[{"internalType":"address","name":"","type":"address"}],"stateMutability":"view","type":"function"},
+    {"inputs":[{"internalType":"uint256","name":"tokenId","type":"uint256"}],"name":"ownerOf","outputs":[{"internalType":"address","name":"","type":"address"}],"stateMutability":"view","type":"function"}
+  ]
+}

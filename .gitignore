@@ -1,53 +1,71 @@
-node_modules
-.env
+# ============================================
+# TerraVerificada - .gitignore
+# Hackweb ImpactLedger Challenge 2026
+# ============================================
 
-# Hardhat files
-/cache
-/artifacts
+# ============================================
+# Dependências (Node.js)
+# ============================================
+node_modules/
+yarn.lock
+pnpm-lock.yaml
 
-# TypeChain files
-/typechain
-/typechain-types
+# ============================================
+# Build & Output
+# ============================================
+.next/
+out/
+dist/
+build/
+.cache/
 
-# solidity-coverage files
-/coverage
-/coverage.json
-
-# Hardhat Ignition default folder for deployments against a local node
+# ============================================
+# Hardhat / Blockchain
+# ============================================
+artifacts/
+cache/
+.typechain/
+coverage/
+coverage.json
 ignition/deployments/chain-31337
 
-node_modules
+# ============================================
+# Environment Variables (SENSITIVE!)
+# ============================================
 .env
+.env.local
+.env.production
+.env.development
+*.env
 
-# Hardhat files
-/cache
-/artifacts
+# ============================================
+# Logs
+# ============================================
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
 
-# TypeChain files
-/typechain
-/typechain-types
+# ============================================
+# OS & Editor
+# ============================================
+.DS_Store
+Thumbs.db
+*.swp
+*.swo
+*~
+.vscode/
+.idea/
 
-# solidity-coverage files
-/coverage
-/coverage.json
+# ============================================
+# Test Coverage
+# ============================================
+coverage/
+.nyc_output/
 
-# Hardhat Ignition default folder for deployments against a local node
-ignition/deployments/chain-31337
-
-node_modules
-.env
-
-# Hardhat files
-/cache
-/artifacts
-
-# TypeChain files
-/typechain
-/typechain-types
-
-# solidity-coverage files
-/coverage
-/coverage.json
-
-# Hardhat Ignition default folder for deployments against a local node
-ignition/deployments/chain-31337
+# ============================================
+# Temporary Files
+# ============================================
+*.tmp
+*.temp
+*.bak
