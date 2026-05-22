@@ -15,6 +15,14 @@ const GeoMap = dynamic(() => import('@/components/GeoMap'), {
   loading: () => <div className="text-stone-500 animate-pulse p-4">Carregando dados cartográficos...</div>
 });
 
+// TODO: Integrar com IPFS real (Pinata/Web3.Storage)
+// Atualmente uso um hash simulado para agilizar a demo.
+// O próximo passo é implementar o upload real de arquivos.
+  
+// TODO: Adicionar validadores 2 e 3 para o consenso completo
+// O contrato suporta 3 validações, mas para a demo usei apenas 1
+// para evitar dependência de múltiplas carteiras no vídeo.
+
 // DEFAULT EXPORT
 export default function Home() {
   const { address, isConnected } = useAccount();

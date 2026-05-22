@@ -1,13 +1,25 @@
 // SPDX-License-Identifier: MIT
-pragma solidity ^0.8.24; // Atualizado para casar com a versão principal do seu projeto
+pragma solidity ^0.8.24;
 
 import "@openzeppelin/contracts/token/ERC721/ERC721.sol";
 import "@openzeppelin/contracts/access/Ownable.sol";
 
 /**
  * @title ImpactNFT
- * Contrato único para o TerraVerificada.
- * Gerencia registros de conflitos fundiários com validação por consenso comunitário (3 validadores).
+ * @notice Contrato para o projeto TerraVerificada - Hackweb ImpactLedger 2026
+ * @author Derek Christopher Dos Santos
+ * 
+ * @dev DECISÃO DE DESIGN:
+ * Optei por implementar um mecanismo de "Consenso Comunitário" exigindo 
+ * 3 validações distintas antes de emitir o certificado (NFT).
+ * 
+ * Motivo: Em conflitos fundiários reais, a validação nunca deve ser unilateral.
+ * Isso simula a governança de comunidades onde líderes precisam concordar
+ * para que uma ação seja considerada legítima.
+ * 
+ * NOTA: Para fins de demonstração rápida no hackathon, o sistema foi 
+ * configurado com apenas 1 validador ativo, mas a lógica suporta o 
+ * consenso de 3. Em produção, isso seria mandatório.
  */
 contract ImpactNFT is ERC721, Ownable {
     
@@ -70,7 +82,7 @@ contract ImpactNFT is ERC721, Ownable {
     }
 
     // Registra um novo incidente de conflito fundiário
-    // param _ipfsHash O hash do IPFS contendo as evidências (foto, audio, coords)
+    // @param _ipfsHash O hash do IPFS contendo as evidências (foto, audio, coords)
     function registerIncident(string memory _ipfsHash) external returns (uint256) {
         incidentCounter++;
         uint256 newId = incidentCounter;
