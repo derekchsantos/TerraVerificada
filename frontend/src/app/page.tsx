@@ -1,10 +1,12 @@
 "use client";
-import React, { useState } from 'react';
+import React, { useState, useRef } from 'react'; // Adicionado 'useRef'
 import dynamic from 'next/dynamic';
 import { useAccount, useReadContract, useWriteContract } from 'wagmi';
 
 // IMPORTAÇÃO EXPLICITA DO JSON DO CONTRATO
 import contractData from '../config/contract.json';
+// IMPORTAÇÃO DA CRIPTOGRAFIA
+import { encryptFile } from '../lib/cryptoUtils';
 
 const CONTRACT_ADDRESS = contractData.address;
 const IMPACT_NFT_ABI = contractData.abi;
@@ -27,7 +29,14 @@ const GeoMap = dynamic(() => import('@/components/GeoMap'), {
 export default function Home() {
   const { address, isConnected } = useAccount();
   const { writeContract, isPending } = useWriteContract();
+  
+  // Estados existentes
   const [ipfsInput, setIpfsInput] = useState("");
+  const [uploading, setUploading] = useState(false);
+  
+  // --- NOVOS ESTADOS PARA CRIPTOGRAFIA ---
+  const [encryptionKey, setEncryptionKey] = useState<string | null>(null);
+  const fileInputRef = useRef<HTMLInputElement>(null); // Referência para o input de arquivo
 
   // LEITURA: Busca o contador total de incidentes direto do Smart Contract
   const { data: totalIncidents } = useReadContract({
@@ -42,9 +51,43 @@ export default function Home() {
     { id: 2, title: "Território Ancestral Y - Garimpo Ilegal", lat: -3.11, lng: -60.02, status: "Confirmado (3/3)" }
   ];
 
+  // --- NOVA FUNÇÃO DE UPLOAD CRIPTOGRAFADO ---
+  const handleUploadToIPFS = async () => {
+    if (!fileInputRef.current?.files[0]) {
+      alert("Por favor, selecione um arquivo (foto/documento) primeiro!");
+      return;
+    }
+
+    setUploading(true);
+    const file = fileInputRef.current.files[0];
+
+    try {
+      // 1. Criptografar o arquivo localmente (AES-256)
+      const { encryptedBlob, key } = await encryptFile(file);
+      setEncryptionKey(key); // Guarda a chave na memória (em prod, mostraria para o usuário baixar)
+
+      // 2. Simular upload do arquivo CRIPTOGRAFADO para IPFS
+      // (Aqui você usaria o SDK do Pinata com o encryptedBlob)
+      // Para demo, vamos gerar um hash falso indicando que é criptografado
+      const mockEncryptedHash = `Encrypted_Qm${Math.random().toString(36).substring(2, 15)}...`;
+      
+      setIpfsInput(mockEncryptedHash); // Atualiza o input com o hash
+      
+      alert(`Arquivo CRIPTOGRAFADO e pronto para envio!\n\n Privacidade: O arquivo foi criptografado no seu navegador.\n Chave gerada (salva na memória para demo).\n📡 Hash: ${mockEncryptedHash}`);
+      
+      console.log("Chave secreta (não compartilhe em produção):", key);
+      
+    } catch (error) {
+      console.error("Erro na criptografia:", error);
+      alert("Erro ao criptografar arquivo. Verifique o console.");
+    } finally {
+      setUploading(false);
+    }
+  };
+
   // ENVIO: Função disparada pelo botão para registrar o incidente na blockchain Sepolia
   const handleRegister = async () => {
-    if (!ipfsInput) return alert("Insira o Hash do IPFS!");
+    if (!ipfsInput) return alert("Insira o Hash do IPFS (faça o upload primeiro)!");
     
     writeContract({
       abi: IMPACT_NFT_ABI,
@@ -87,23 +130,56 @@ export default function Home() {
               <span className="mr-2"></span> Reportar Conflito Fundiário
             </h2>
             <p className="text-sm text-stone-600 mb-4">
-              Insira as evidências salvas no IPFS para iniciar o consenso comunitário.
+              Insira as evidências. <strong>Os arquivos são criptografados</strong> antes de ir para o IPFS.
             </p>
             
-            <input 
-              type="text"
-              placeholder="Hash do IPFS (Qm...)"
-              value={ipfsInput}
-              onChange={(e) => setIpfsInput(e.target.value)}
-              className="w-full border border-stone-300 rounded-xl px-3 py-2 text-sm mb-3 focus:outline-none focus:border-[#A34828] text-stone-800"
-            />
+            {/* INPUT DE ARQUIVO (NOVO) */}
+            <div className="mb-3">
+              <label className="block text-sm font-medium text-stone-700 mb-1">1. Selecione a Evidência</label>
+              <input 
+                type="file"
+                ref={fileInputRef}
+                className="block w-full text-sm text-stone-500
+                  file:mr-4 file:py-2 file:px-4
+                  file:rounded-full file:border-0
+                  file:text-sm file:font-semibold
+                  file:bg-[#1C3D27] file:text-white
+                  hover:file:bg-[#132B1B]
+                "
+              />
+            </div>
+
+            {/* BOTÃO DE UPLOAD CRIPTOGRAFADO */}
+            <button 
+              onClick={handleUploadToIPFS}
+              disabled={uploading || !fileInputRef.current?.files[0]}
+              className="w-full bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-xl transition disabled:opacity-50 mb-3 flex items-center justify-center gap-2"
+            >
+              {uploading ? 'Criptografando...' : 'Criptografar & Enviar para IPFS'}
+            </button>
+
+            {/* INPUT DE HASH (APARECE DEPOIS DO UPLOAD) */}
+            {ipfsInput && (
+              <div className="mb-3">
+                <label className="block text-sm font-medium text-stone-700 mb-1">2. Hash Criptografado (IPFS)</label>
+                <input 
+                  type="text"
+                  readOnly
+                  value={ipfsInput}
+                  className="w-full bg-stone-100 border border-stone-300 rounded-xl px-3 py-2 text-sm text-stone-600 font-mono"
+                />
+                {encryptionKey && (
+                  <p className="text-xs text-green-600 mt-1">Chave de descriptografia gerada (simulação).</p>
+                )}
+              </div>
+            )}
 
             <button 
               onClick={handleRegister}
-              disabled={isPending}
-              className="w-full bg-[#1C3D27] hover:bg-[#132B1B] text-white py-3 rounded-xl font-semibold transition-all disabled:opacity-50"
+              disabled={!ipfsInput || isPending}
+              className="w-full bg-[#1C3D27] hover:bg-[#132B1B] text-white font-bold py-3 px-4 rounded-xl transition-all disabled:opacity-50"
             >
-              {isPending ? "Processando na Carteira..." : "+ Registrar na Blockchain"}
+              {isPending ? 'Processando na Carteira...' : '+ Registrar na Blockchain'}
             </button>
           </div>
 
@@ -140,7 +216,6 @@ export default function Home() {
             
             {/* CONTAINER DO MAPA REAL */}
             <div className="flex-1 w-full h-full rounded-xl overflow-hidden bg-stone-100 relative">
-              {/* Agora o componente bate perfeitamente com a declaração dinâmica do topo */}
               <GeoMap incidents={mockGeoIncidents} />            
             </div>
           </div>
@@ -151,6 +226,7 @@ export default function Home() {
       {/* FOOTER */}
       <footer className="bg-stone-100 text-center py-4 text-xs text-stone-500 border-t border-stone-200">
         <p>TerraVerificada &copy; 2026 - Proteção territorial baseada em consenso comunitário descentralizado.</p>
+        <p className="mt-1 text-[10px]">Criptografia AES-256 aplicada às evidências.</p>
       </footer>
     </div>
   );
