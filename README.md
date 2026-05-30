@@ -160,3 +160,18 @@ Para validação completa do comissionamento técnico do MVP, todos os artefatos
 *   `assets/backend/script_interagir_qa.png`: Execução do pipeline de simulação e scripts automatizados de qualidade gerando inserções diretas no livro contábil da Sepolia para estresse do consenso de 3 assinaturas.
 
 ---
+
+## Propriedade Intelectual e Licenciamento
+
+O código-fonte deste projeto é disponibilizado sob a licença **MIT License**.
+Isso significa que você é livre para usar, estudar, modificar e distribuir o código, desde que:
+1.  Atribua os créditos aos autores originais (**Derek Christopher Dos Santos** e equipe TerraVerificada).
+2.  Inclua uma cópia da licença original em todas as cópias do software.
+
+**Marca e Identidade Visual:**
+A marca "TerraVerificada", o logotipo e os materiais de marketing são propriedade exclusiva dos fundadores. O uso não autorizado da marca para fins comerciais é proibido.
+
+**Proteção de Dados:**
+Os dados gerados na blockchain e no IPFS são de propriedade das comunidades e validadores que os registraram, conforme descrito no contrato inteligente `ImpactNFT`.
+
+*Este projeto foi desenvolvido para o Hackweb 3.0 / Residência em TIC 29. A autoria do código e da arquitetura é de responsabilidade exclusiva de Derek Christopher Dos Santos.*
