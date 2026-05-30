@@ -7,34 +7,54 @@
 
 ---
 
-##  Visão Geral
+## Links Rápidos do Projeto
 
-O **TerraVerificada** é uma solução descentralizada desenvolvida para registrar, validar e certificar ações de impacto social relacionadas a **conflitos fundiários comunitários** no Brasil.
+*   ** [Vídeo de Pitch Comercial (YouTube)](https://youtu.be/mKjSKEYJ5ls)**
+*   **🛠️[Vídeo de Demonstração e Testes (YouTube)](https://youtu.be/6PCglqQ0Nms)**
+*   ** [Contrato Inteligente Verificado (Sepolia Etherscan)](https://etherscan.io)**
 
-O projeto utiliza a tecnologia blockchain para transformar relatos de invasões, desmatamentos e ameaças territoriais em **evidências digitais imutáveis, auditáveis e verificáveis**, resolvendo o problema da falta de confiança em relatórios manuais e documentos isolados.
 
 ---
 
-##  O Problema
+## Visão Geral
 
-Comunidades tradicionais, indígenas e rurais enfrentam sérias dificuldades para comprovar a ocorrência de conflitos fundiários:
+O **TerraVerificada** é uma infraestrutura Web3 descentralizada desenvolvida para registrar, validar e certificar ações de impacto social relacionadas a **conflitos fundiários e ambientais** no Brasil.
 
-*   **Fragilidade de Provas:** Relatórios manuais e fotos podem ser facilmente falsificados, corrompidos ou perdidos.
-*   **Falta de Rastreabilidade:** Não há um histórico auditável cronológico de quando e por quem o evento foi inserido na base.
-*   **Baixa Transparência:** Dificuldade em prestar contas e fornecer dados confiáveis a órgãos públicos, ONGs e apoiadores.
-*   **Impunidade:** A ausência de provas tecnicamente verificáveis dificulta o andamento de ações judiciais e a consequente proteção territorial.
+O projeto utiliza tecnologia blockchain para transformar relatos de invasões, desmatamentos e ameaças territoriais em **evidências digitais imutáveis, criptografadas e auditáveis**, eliminando a dependência de relatórios manuais centralizados e vulneráveis à adulteração.
+
+---
+
+## O Problema e as "Gambiarras" do Mercado
+
+Comunidades tradicionais, indígenas e rurais enfrentam sérias barreiras para comprovar violações territoriais:
+
+*   **Fragilidade e Fraude de Provas:** Arquivos locais e mídias em servidores centrais podem ser facilmente apagados, alterados ou forjados por invasores.
+*   **Quebra da Cadeia de Custódia:** Inexistência de um histórico cronológico imutável que comprove a autoria e o momento exato de geração do dado.
+*   **Vulnerabilidade à Censura:** Dependência de infraestruturas centralizadas e bancos de dados locais sujeitos a ataques de negação de serviço (DoS) ou remoção coercitiva de informações.
+*   **Invalidez Jurídica Imediata:** Provas isoladas recolhidas no campo que carecem de chaves criptográficas válidas para processos de auditoria legal em tribunais.
 
 ---
 
 ##  A Solução e Diferenciais de Originalidade
 
-O TerraVerificada resolve esses gargalos através de uma arquitetura inovadora baseada em **Blockchain**, **Smart Contracts** e **Governança Descentralizada**:
+O TerraVerificada resolve esses gargalos integrando as tecnologias de governança Web3 e criptografia de ponta a ponta:
 
-1.  **Registro Imutável:** Cada incidente é registrado na blockchain (Sepolia Testnet), garantindo que os dados não possam ser alterados ou apagados por agentes externos.
-2.  **Mecanismo de Confiança Distribuída (Consenso):** Um incidente só é considerado "Oficial" e validado após receber **3 validações independentes** de lideranças comunitárias autorizadas.
-3.  **Certificação Automática (NFT):** Ao atingir o consenso exigido, o Smart Contract realiza a cunhagem automática de um **NFT (ERC-721)** como um certificado digital criptográfico de impacto.
-4.  **Narrativa Visual Cartográfica:** Painel integrado com mapas interativos focados no território brasileiro para monitorar e exibir os focos de conflito em tempo real.
-5.  **Armazenamento Descentralizado:** As evidências pesadas (fotos, áudios, relatórios) são salvas no IPFS, gravando apenas o hash identificador imutável (CID) na blockchain, reduzindo custos de gás e preservando a segurança.
+1.  **Cadeia de Custódia Imutável via Ledger:** Cada incidente gera um hash perene gravado na rede de testes Ethereum Sepolia, impossibilitando a exclusão ou modificação por agentes externos.
+2.  **Privacidade e Criptografia Local (AES-256):** Antes de subir qualquer evidência (fotos/áudios) para o armazenamento compartilhado, os dados sensíveis são criptografados no navegador do usuário via chave simétrica AES-256, garantindo a inviolabilidade das mídias.
+3.  **Mecanismo Antifraude Distribuído (Consenso):** Um alerta só atinge o status de "Confirmado" se obtiver o aval assinado de pelo menos **3 validadores independentes** credenciados pela comunidade local.
+4.  **Cunhagem Autônoma de Impacto (NFT ERC-721):** Assim que o consenso comunitário é alcançado, o contrato executa de forma autônoma a cunhagem de um token não fungível como um certificado digital auditável para o reportador.
+5.  **Persistência Descentralizada Off-Chain (IPFS):** Arquivos pesados residem em nós distribuídos do IPFS, gravando em cadeia somente os CIDs gerados, o que otimiza as taxas de gás na rede de execução (EVM).
+6.  **Painel Cartográfico Integrado:** Interface dotada de inteligência geográfica para exibição em tempo real dos status das fronteiras vigiadas.
+
+---
+
+## Inteligência de Mercado (TAM / SAM / SOM)
+
+O projeto está inserido na vanguarda da conformidade corporativa ESG, governança territorial e proteção climática:
+
+*   **TAM (Mercado Total):** Mercado global de softwares de auditoria, rastreabilidade agrícola e tecnologias de conformidade socioambientais.
+*   **SAM (Mercado Endereçável):** Monitoramento e salvaguarda de terras públicas, posses privadas reguladas e territórios ancestrais mapeados sob estresse ambiental na Amazônia Legal.
+*   **SOM (Mercado de Entrada):** Cooperativas agrícolas baseadas em critérios rígidos de exportação, fundos de investimento de impacto e ONGs de monitoramento sediadas na região Norte do Brasil.
 
 ---
 
@@ -43,50 +63,55 @@ O TerraVerificada resolve esses gargalos através de uma arquitetura inovadora b
 ### Stack Tecnológica
 
 
-| Camada | Tecnologia | papel no Ecossistema |
+| Camada | Tecnologia | Papel no Ecossistema |
 | :--- | :--- | :--- |
-| **Blockchain** | Ethereum Sepolia Testnet | Registro de estado e imutabilidade dos consensos |
-| **Smart Contract** | Solidity 0.8.28 + OpenZeppelin | Lógica de negócio, ERC-721 e controle de acesso |
-| **Frontend** | Next.js 16 (Turbopack) + TypeScript | Interface de monitoramento e mapa interativo |
-| **Estilização** | Tailwind CSS | Identidade visual temática e responsividade |
-| **Web3 Integration** | Wagmi + Viem + RainbowKit | Conexão com carteiras e assinatura de transações |
-| **Mapas** | React-Leaflet + OpenStreetMap | Plotagem cartográfica dos alertas geográficos |
-| **Ambiente Dev** | WSL2 (Ubuntu) + Hardhat v2.28 | Ambiente isolado de desenvolvimento e compilação |
-| **SecOps** | Slither Analyzer + NPM Audit | Análise estática do contrato e varredura de supply chain |
+| **Blockchain** | Ethereum Sepolia Testnet | Registro de estado definitivo e imutabilidade dos consensos |
+| **Smart Contract** | Solidity 0.8.28 + OpenZeppelin | Lógica de negócio parametrizada, padrão ERC-721 e controle de acesso |
+| **Frontend** | Next.js 16 (Turbopack) + TypeScript | Interface de monitoramento dinâmico e renderização cartográfica |
+| **Criptografia** | Web Crypto API (AES-256-GCM) | Cifragem local de mídias e coordenadas geográficas pré-upload |
+| **Web3 Integration** | Wagmi + Viem + RainbowKit | Conexão segura de carteiras cripto e assinatura digital de transações |
+| **Mapas** | React-Leaflet + OpenStreetMap | Plotagem geográfica de nós e alertas territoriais em tempo real |
+| **Ambiente Dev** | WSL2 (Ubuntu) + Hardhat v2.28 | Compilação isolada, gerenciamento de scripts de implantação e testes |
+| **SecOps** | Slither Analyzer + NPM Audit | Verificação estática de bytecode e mapeamento de dependências |
 
 ### Diagrama de Arquitetura e Ciclo de Vida do Dado
 
 ```text
-[Usuário] --------(1) Envia Evidências (Fotos/Áudios)--------> [ IPFS ]
-[Usuário] <-------(2) Retorna Identificador (CID)------------ [ IPFS ]
+[Usuário] --------(1) Criptografa Mídias Localmente (AES-256) ------> [ Memória Local ]
+[Usuário] --------(2) Faz o upload das mídias cifradas -----------> [ IPFS ]
+[Usuário] <-------(3) Retorna Identificador Imutável (CID) -------- [ IPFS ]
+
+
 
                                                                  
                                                                  | [ Pipeline SecOps ]
                                                                  | -> Slither Analyzer (Contratos)
                                                                  | -> NPM Audit (Dependencies)
                                                                  v
-[Usuário] --------(3) Assina registerIncident(CID)----------> [Smart Contract]
+[Usuário] --------(4) Assina registerIncident(CID) ---------------> [Smart Contract]
+
 
 
                                                                      |
-                                                               (4) Grava Alerta
+                                                               (5) Grava Alerta
                                                                (Status: PENDING)
                                                                      |
                                                                      v
-[Validadores] ----(5) Executam validateIncident(ID)----------> [Smart Contract]
+[Validadores] ----(6) Executam validateIncident(ID) --------------> [Smart Contract]
+
 
 
                                                                      |
-                                                               (6) Verifica Consenso
+                                                               (7) Verifica Consenso
                                                                (Mínimo 3 Votos)
                                                                      |
                                                                      v
-[Usuário (Carteira)] <-- (7) Emite NFT de Certificado (TVC)--- [Smart Contract]
+[Usuário (Carteira)] <-- (8) Emite NFT de Certificado (TVC) ------- [Smart Contract]
 ```
 
 ---
 
-##  Contrato Inteligente
+## Contrato Inteligente
 
 - **Endereço na Sepolia:** [`0xA821477f669D74093Fc47eCd3095b9120Bc30a7f`](https://etherscan.io)
 - **Status:** ✅ **Source Code Verified (Exact Match) no Etherscan**
@@ -97,90 +122,41 @@ O TerraVerificada resolve esses gargalos através de uma arquitetura inovadora b
 
 | Função | Tipo | Descrição |
 | :--- | :--- | :--- |
-| `registerIncident(string memory _ipfsHash)` | `nonpayable` | Registra um novo conflito. Armazena o CID e inicia com status `PENDING`. |
-| `validateIncident(uint256 _id)` | `nonpayable` | Computa a validação. Restrita a validadores autorizados que ainda não votaram. |
-| `addValidator(address _validator)` | `onlyOwner` | Autoriza um novo endereço a atuar como validador da rede. |
-| `removeValidator(address _validator)` | `onlyOwner` | Revoga as permissões de validação de um endereço comunitário. |
-| `getIncident(uint256 _id)` | `view` | Retorna o escopo completo do registro (hash, reportador, timestamp, status, votos). |
-| `isValidator(address _addr)` | `view` | Retorna um booleano confirmando o status de permissão do endereço solicitado. |
+| `registerIncident(string memory _ipfsHash)` | `nonpayable` | Insere um novo conflito. Associa o CID gerado ao endereço do emissor e inicia o status como `PENDING`. |
+| `validateIncident(uint256 _id)` | `nonpayable` | Computa a aprovação. Restrita a carteiras validadoras registradas que ainda não tenham votado no ID específico. |
+| `addValidator(address _validator)` | `onlyOwner` | Promove uma nova carteira autorizada ao grupo de governança comunitária. |
+| `removeValidator(address _validator)` | `onlyOwner` | Revoga o direito de voto e validação de um endereço específico na rede. |
+| `getIncident(uint256 _id)` | `view` | Retorna o escopo completo do registro (hash, reportador, timestamp, status, contagem de votos). |
 
 ---
 
-## Segurança e Auditorias Automatizadas (SecOps)
+##  Segurança, Criptografia e Auditorias (SecOps)
 
-O projeto segue rigorosamente as **melhores práticas de desenvolvimento seguro** da indústria Ethereum. Para validar a integridade estrutural e mitigar riscos de vulnerabilidades, o código foi submetido a uma esteira de testes antes de sua publicação definitiva:
+O ecossistema foi projetado sob diretrizes rigorosas do modelo **Security by Design**, combinando proteção de privacidade de ponta a ponta e auditorias estáticas automatizadas:
 
-### 1. Análise Estática com Slither Analyzer:
-*   O contrato inteligente foi auditado localmente utilizando o framework de segurança corporativo **Slither**.
-*   **Resultado:** **0 vulnerabilidades críticas ou de alta severidade** encontradas nas funções de governança, consenso comunitário ou cunhagem (`_safeMint`). Os apontamentos de otimização e severidade baixa foram integralmente mitigados e validados sob a arquitetura do compilador Solidity 0.8.28.
+### 1. Camada de Blindagem e Privacidade Local
+Para mitigar o risco de retaliações ou exposição de dados estratégicos comunitários dentro do IPFS público, o dApp implementa rotinas de criptografia simétrica client-side utilizando a **Web Crypto API** (AES-256-GCM). As mídias e metadados geográficos são cifrados localmente na máquina do usuário antes do upload, garantindo privacidade de conhecimento zero (Zero-Knowledge): a infraestrutura armazena os registros, mas as identidades e mídias sensíveis permanecem seguras.
 
-### 2. Varredura de Dependências do Ecossistema (NPM Audit):
-*   Executado protocolo de correção `npm audit fix` no escopo do Frontend para neutralizar ameaças de *Supply Chain Attacks*.
-*   **Resultado:** 100% dos pacotes do Next.js e bibliotecas Web3 secundárias blindados e atualizados contra falhas conhecidas de injeção de scripts ou estouro de buffer de pacotes.
+### 2. Análise Estática com Slither Analyzer
+O contrato inteligente foi submetido a varreduras automatizadas utilizando o framework de auditoria de segurança **Slither**.
+*   **Resultado:** 0 vulnerabilidades críticas ou de alta severidade encontradas. As regras de acesso (`onlyOwner`), bloqueios de voto duplo (`hasValidated`) e interações de cunhagem de tokens seguem estritamente o padrão *Checks-Effects-Interactions* para neutralizar ataques de reentrância.
 
-### 3. Medidas de Segurança de Código:
-*   **Utilização de OpenZeppelin:** Herança dos contratos padrões `ERC721` e `Ownable`, amplamente testados e auditados pelo mercado, eliminando falhas de implementação manual de tokens.
-*   **Proteção contra Reentrância:** A lógica de validação de incidentes e distribuição de certificados segue estritamente o padrão de design *Checks-Effects-Interactions*, garantindo que alterações de estado interno ocorram antes de chamadas externas de cunhagem.
-*   **Isolamento de Credenciais:** Políticas severas de privacidade no arquivo `.gitignore` impedem a indexação acidental de chaves privadas e ambientes locais de desenvolvimento (`.env`, `.next/`, `node_modules/`).
+### 3. Blindagem da Supply Chain (NPM Audit)
+Foi executada uma varredura profunda em todas as dependências do ecossistema Next.js e bibliotecas Web3 secundárias através do protocolo `npm audit`. Todas as bibliotecas de integração foram atualizadas para as versões corporativas mais estáveis, blindando a aplicação contra ataques de injeção e vulnerabilidades de terceiros.
 
 ---
 
-##  Como Executar o Projeto
+## Evidências Técnicas de Funcionamento
 
-### Pré-requisitos
-*   Node.js (versão 18 ou superior)
-*   MetaMask (com a rede Sepolia configurada e saldo de testnet)
-*   Git
+Para validação completa do comissionamento técnico do MVP, todos os artefatos visuais de testes foram organizados de forma estruturada no diretório de recursos:
 
-### 1. Instalação e Configuração
+### Interface, Frontend e Backend (`assets/`)
 
-```bash
-# Clonar o repositório
-git clone https://github.com
-cd TerraVerificada
-
-# Instalar dependências da raiz (Ambiente Hardhat)
-npm install
-```
-
-### 2. Configurar Variáveis de Ambiente
-Crie um arquivo `.env` na raiz do projeto seguindo o modelo:
-```env
-SEPOLIA_RPC_URL=https://alchemy.com
-PRIVATE_KEY=SUA_CHAVE_PRIVADA_DA_METAMASK
-ETHERSCAN_API_KEY=SUA_CHAVE_DE_API_ETHERSCAN
-```
-
-### 3. Compilar e Configurar Validadores (Backend)
-```bash
-# Compilar Smart Contracts para a EVM Cancun
-npx hardhat compile
-
-# Adicionar o primeiro validador de teste via script
-npx hardhat run scripts/addValidators.js --network sepolia
-```
-
-### 4. Inicializar o Painel (Frontend Next.js)
-```bash
-cd frontend
-npm install
-npm run dev
-```
-Acesse `http://localhost:3000` no seu navegador para interagir com o dashboard e o mapa interativo.
+*   `assets/frontend/carteira_conectada.png`: Demonstração da autenticação descentralizada via RainbowKit/Wagmi.
+*   `assets/frontend/criptografia_simétrica_mapa.png`: Evidência de processamento de criptografia local de metadados no cliente.
+*   `assets/frontend/garimpo_ilegal_mapa.png` e `assets/frontend/invasão_terra_indígina_mapa.png`: Plotagem cartográfica com pins interativos e consumo dos dados on-chain em cenários simulados na região Norte.
+*   `assets/backend/deploy.png`: Log de execução do script Hardhat compilando para a EVM Cancun e realizando a publicação em testnet.
+*   `assets/backend/verificado_no_Etherscan.png`: Print da verificação do compilador com correspondência exata das regras lógicas do Smart Contract.
+*   `assets/backend/script_interagir_qa.png`: Execução do pipeline de simulação e scripts automatizados de qualidade gerando inserções diretas no livro contábil da Sepolia para estresse do consenso de 3 assinaturas.
 
 ---
-
-## Estrutura Final do Repositório
-
-```text
-TerraVerificada/
-├── assets/             # Capturas de tela do painel e recursos visuais do MVP
-├── contracts/          # Código-fonte Solidity do Smart Contract (ImpactNFT.sol)
-├── docs/               # Documentação técnica de arquitetura e notas de escopo
-├── frontend/           # Aplicação web Next.js (Dashboard integrado)
-├── scripts/            # Automatos de deploy e configuração de validadores
-├── package.json        # Dependências centrais do ambiente Hardhat
-└── hardhat.config.js   # Configuração de compiladores e redes do ecossistema
-```
-
-> **Nota:** Este projeto serve como uma prova de conceito (PoC) para demonstrar a viabilidade técnica e prática de soluções regenerativas e de impacto social unindo governança comunitária tradicional e Web3.
