@@ -10,7 +10,7 @@
 ## Links Rápidos do Projeto
 
 *   ** [Vídeo de Pitch Comercial (YouTube)](https://youtu.be/mKjSKEYJ5ls)**
-*   **🛠️[Vídeo de Demonstração e Testes (YouTube)](https://youtu.be/6PCglqQ0Nms)**
+*   ** [Vídeo de Demonstração e Testes (YouTube)](https://youtu.be/6PCglqQ0Nms)**
 *   ** [Contrato Inteligente Verificado (Sepolia Etherscan)](https://etherscan.io)**
 
 
