@@ -92,4 +92,4 @@ O ecossistema **TerraVerificada** passou por uma suíte de testes de invasão e 
 O contrato inteligente provou-se 100% íntegro e seguro para operações em produção.
 
 *Evidência de Sucesso da Auditoria:**
-![Relatório de Auditoria Red Team](../assets/backend/auditoria_seguranca.png)
+![Relatório de Auditoria Red Team](../assets/backend/security-audit.png)
