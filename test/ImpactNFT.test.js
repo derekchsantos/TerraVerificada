@@ -1,5 +1,3 @@
-//@author Derek Christopher Dos Santos
-
 const { expect } = require("chai");
 const { ethers } = require("hardhat");
 
