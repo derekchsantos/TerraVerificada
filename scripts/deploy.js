@@ -1,5 +1,3 @@
-//@author Derek Christopher Dos Santos
-
 const hre = require("hardhat");
 
 async function main() {
