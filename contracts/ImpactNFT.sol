@@ -7,7 +7,6 @@ import "@openzeppelin/contracts/access/Ownable.sol";
 /**
  * @title ImpactNFT
  * @notice Contrato para o projeto TerraVerificada - Hackweb ImpactLedger 2026
- * @author Derek Christopher Dos Santos
  * 
  * @dev DECISÃO DE DESIGN:
  * Optei por implementar um mecanismo de "Consenso Comunitário" exigindo 
