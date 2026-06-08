@@ -183,6 +183,6 @@ Conforme as diretrizes do Hackweb, informamos o seguinte uso de ferramentas de I
 | **Pesquisa de Contexto** | Assistentes de IA | Compreensão do cenário de conflitos fundiários, dados ambientais da Amazônia e requisitos ESG |
 | **Refinamento de Pitch** | Assistentes de IA | Melhoria da narrativa comercial e clareza na comunicação técnica |
 
-> **Observação:** O código-fonte (Smart Contracts Solidity, frontend Web3, scripts de teste) foi desenvolvido exclusivamente pelo participante **Derek Christopher Dos Santos**. As decisões técnicas, implementação, estruturação e documetações, auditoria de segurança e validação final são de total responsabilidade humana. A IA atuou apenas como suporte para pesquisa e produtividade.
+> **Observação:** O código-fonte (Smart Contracts Solidity, frontend Web3, scripts de teste) foi desenvolvido exclusivamente pelo participante **Derek Christopher Dos Santos**. As decisões técnicas, implementação, estruturação e documetações, auditoria de segurança e validação final são de total responsabilidade humana. A IA atuou apenas como suporte para pesquisa.
 
 *Este projeto foi desenvolvido para o Hackweb 3.0 / Residência em TIC 29. A autoria do código e da arquitetura é de responsabilidade exclusiva de Derek Christopher Dos Santos.*
