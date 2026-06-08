@@ -174,4 +174,15 @@ A marca "TerraVerificada", o logotipo e os materiais de marketing são proprieda
 **Proteção de Dados:**
 Os dados gerados na blockchain e no IPFS são de propriedade das comunidades e validadores que os registraram, conforme descrito no contrato inteligente `ImpactNFT`.
 
+## Transparência sobre Uso de Inteligência Artificial
+
+Conforme as diretrizes do Hackweb, informamos o seguinte uso de ferramentas de IA generativa durante o desenvolvimento deste projeto:
+
+| Tipo de Uso | Ferramentas | Objetivo |
+|-------------|-------------|----------|
+| **Pesquisa de Contexto** | Assistentes de IA | Compreensão do cenário de conflitos fundiários, dados ambientais da Amazônia e requisitos ESG |
+| **Refinamento de Pitch** | Assistentes de IA | Melhoria da narrativa comercial e clareza na comunicação técnica |
+
+> **Observação:** O código-fonte (Smart Contracts Solidity, frontend Web3, scripts de teste) foi desenvolvido exclusivamente pelo participante **Derek Christopher Dos Santos**. As decisões técnicas, implementação, estruturação e documetação, auditoria de segurança e validação final são de total responsabilidade humana. A IA atuou apenas como suporte para pesquisa e produtividade.
+
 *Este projeto foi desenvolvido para o Hackweb 3.0 / Residência em TIC 29. A autoria do código e da arquitetura é de responsabilidade exclusiva de Derek Christopher Dos Santos.*
